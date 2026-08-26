@@ -7,11 +7,6 @@
 <title>ZER | Official Links</title>
 
 <style>
-
-/* =========================
-   RESET
-========================= */
-
 * {
     margin: 0;
     padding: 0;
@@ -31,7 +26,12 @@ body {
         radial-gradient(circle at 50% 0%, rgba(255, 0, 70, 0.18), transparent 28%),
         radial-gradient(circle at 10% 50%, rgba(120, 0, 255, 0.22), transparent 30%),
         radial-gradient(circle at 90% 60%, rgba(0, 130, 255, 0.18), transparent 30%),
-        linear-gradient(180deg, #05050d 0%, #090014 45%, #03050d 100%);
+        linear-gradient(
+            180deg,
+            #05050d 0%,
+            #090014 45%,
+            #03050d 100%
+        );
 
     overflow-x: hidden;
 }
@@ -40,16 +40,18 @@ body::before {
     content: "";
     position: fixed;
     inset: 0;
+
     pointer-events: none;
     opacity: 0.35;
 
     background:
         linear-gradient(
             90deg,
-            transparent,
-            rgba(0,255,255,0.04),
-            transparent
+            transparent 0%,
+            rgba(0,255,255,0.04) 50%,
+            transparent 100%
         ),
+
         repeating-linear-gradient(
             90deg,
             transparent 0px,
@@ -59,16 +61,16 @@ body::before {
         );
 }
 
-
-/* =========================
-   CONTAINER
-========================= */
+/* CONTAINER */
 
 .container {
     width: 100%;
     max-width: 620px;
+
     margin: auto;
-    padding: 48px 18px 40px;
+
+    padding: 45px 22px 45px;
+
     position: relative;
     z-index: 1;
 }
@@ -79,29 +81,37 @@ body::before {
 ========================= */
 
 .profile {
-    width: 165px;
-    height: 165px;
-    margin: 0 auto 22px;
-    border-radius: 50%;
-    padding: 5px;
+    width: 175px;
+    height: 175px;
 
-    background: linear-gradient(
-        135deg,
-        #ffffff,
-        #ff003c,
-        #ff0066
-    );
+    margin: 0 auto 22px;
+
+    border-radius: 50%;
+
+    padding: 6px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffffff,
+            #ff003c,
+            #ff0066
+        );
 
     box-shadow:
-        0 0 15px rgba(255,0,70,0.8),
-        0 0 35px rgba(255,0,70,0.5);
+        0 0 15px rgba(255,0,70,0.9),
+        0 0 40px rgba(255,0,70,0.6),
+        0 0 80px rgba(255,0,70,0.3);
 }
 
 .profile img {
     width: 100%;
     height: 100%;
+
     object-fit: cover;
+
     border-radius: 50%;
+
     display: block;
 }
 
@@ -112,8 +122,10 @@ body::before {
 
 h1 {
     text-align: center;
-    font-size: 50px;
+
+    font-size: 54px;
     font-weight: 900;
+
     letter-spacing: 7px;
 
     text-shadow:
@@ -122,24 +134,28 @@ h1 {
 }
 
 .line {
-    width: 70px;
+    width: 75px;
     height: 4px;
-    margin: 14px auto 18px;
+
+    margin: 15px auto 20px;
+
     border-radius: 50px;
 
     background: #ff174d;
 
     box-shadow:
-        0 0 15px #ff174d,
-        0 0 30px rgba(255,23,77,0.5);
+        0 0 15px #ff174d;
 }
 
 .description {
     text-align: center;
-    font-size: 15px;
+
+    font-size: 17px;
     line-height: 1.7;
+
     color: #dddddd;
-    margin-bottom: 30px;
+
+    margin-bottom: 32px;
 }
 
 
@@ -150,55 +166,49 @@ h1 {
 .links {
     display: flex;
     flex-direction: column;
-    gap: 14px;
+
+    gap: 16px;
 }
 
 
 /* =========================
-   BUTTON
+   TOMBOL
 ========================= */
 
 .link {
     position: relative;
 
+    isolation: isolate;
+
+    text-decoration: none;
+
+    color: white;
+
+    min-height: 92px;
+
+    border-radius: 22px;
+
     display: flex;
     align-items: center;
 
-    min-height: 84px;
-    padding: 12px 16px;
+    padding: 15px 20px;
 
-    text-decoration: none;
-    color: white;
+    overflow: hidden;
 
-    border-radius: 20px;
-
-    isolation: isolate;
+    border: 1px solid rgba(255,255,255,0.18);
 
     transition:
         transform 0.25s ease,
-        filter 0.25s ease;
+        box-shadow 0.25s ease;
 
     box-shadow:
-        0 8px 25px rgba(0,0,0,0.4);
+        0 8px 25px rgba(0,0,0,0.4),
+        inset 0 1px 0 rgba(255,255,255,0.15);
 }
 
 
 /* =========================
-   BACKGROUND TOMBOL
-========================= */
-
-.link .button-bg {
-    position: absolute;
-    inset: 2px;
-
-    border-radius: 18px;
-
-    z-index: -2;
-}
-
-
-/* =========================
-   ANIMATED BORDER
+   GARIS BERGERAK KELILING
 ========================= */
 
 .link::before {
@@ -206,83 +216,86 @@ h1 {
 
     position: absolute;
 
-    inset: 0;
+    width: 180%;
+    height: 350%;
 
-    border-radius: inherit;
+    left: 50%;
+    top: 50%;
 
-    padding: 2px;
+    transform:
+        translate(-50%, -50%)
+        rotate(0deg);
 
-    background: conic-gradient(
-        from 0deg,
+    background:
+        conic-gradient(
+            from 0deg,
 
-        transparent 0deg,
-        transparent 300deg,
+            transparent 0deg,
+            transparent 285deg,
 
-        rgba(255,255,255,0.25) 315deg,
+            rgba(255,255,255,0.15) 300deg,
 
-        #ffffff 330deg,
+            #ffffff 315deg,
 
-        #ffffff 340deg,
+            rgba(255,255,255,0.15) 330deg,
 
-        rgba(255,255,255,0.4) 350deg,
+            transparent 345deg,
+            transparent 360deg
+        );
 
-        transparent 360deg
-    );
+    animation:
+        borderMove 3s linear infinite;
 
-    animation: borderSpin 2.5s linear infinite;
+    z-index: -2;
+}
 
-    -webkit-mask:
-        linear-gradient(#fff 0 0) content-box,
-        linear-gradient(#fff 0 0);
 
-    -webkit-mask-composite: xor;
+/* BAGIAN DALAM
+   AGAR CAHAYA HANYA TERLIHAT
+   DI PINGGIRAN */
 
-    mask-composite: exclude;
+.link::after {
+    content: "";
 
-    pointer-events: none;
+    position: absolute;
 
-    z-index: 5;
+    inset: 2px;
+
+    border-radius: 20px;
+
+    z-index: -1;
 }
 
 
 /* =========================
-   ANIMASI BORDER
+   ANIMASI PUTAR 360
 ========================= */
 
-@keyframes borderSpin {
+@keyframes borderMove {
 
     0% {
-        transform: rotate(0deg);
+        transform:
+            translate(-50%, -50%)
+            rotate(0deg);
     }
 
     100% {
-        transform: rotate(360deg);
+        transform:
+            translate(-50%, -50%)
+            rotate(360deg);
     }
 
 }
 
 
-/* =========================
-   ISI TOMBOL
-========================= */
-
-.link > :not(.button-bg) {
-    position: relative;
-    z-index: 2;
-}
-
-
-/* =========================
-   HOVER & CLICK
-========================= */
-
-.link:hover {
-    transform: translateY(-3px);
-    filter: brightness(1.08);
-}
+/* EFEK SAAT DIKLIK */
 
 .link:active {
-    transform: scale(0.98);
+    transform: scale(0.97);
+}
+
+.link:hover {
+    transform: translateY(-2px);
 }
 
 
@@ -291,111 +304,217 @@ h1 {
 ========================= */
 
 .icon {
-    width: 52px;
-    height: 52px;
+    width: 58px;
+    height: 58px;
 
-    min-width: 52px;
+    min-width: 58px;
 
-    border-radius: 16px;
+    border-radius: 17px;
 
     display: flex;
     align-items: center;
     justify-content: center;
 
-    font-size: 26px;
+    font-size: 28px;
 
-    margin-right: 14px;
+    margin-right: 16px;
 
-    background: rgba(255,255,255,0.13);
+    background:
+        rgba(255,255,255,0.13);
 
     box-shadow:
         inset 0 0 15px rgba(255,255,255,0.08);
 }
 
 
-/* =========================
-   TEXT
-========================= */
+/* INFO */
 
 .info {
     flex: 1;
 }
 
 .name {
-    font-size: 21px;
+    font-size: 24px;
+
     font-weight: 800;
-    margin-bottom: 4px;
+
+    margin-bottom: 5px;
 }
 
 .sub {
-    font-size: 12px;
-    color: rgba(255,255,255,0.88);
+    font-size: 14px;
+
+    color:
+        rgba(255,255,255,0.88);
 }
 
 
-/* =========================
-   PANAH
-========================= */
+/* PANAH */
 
 .arrow {
-    font-size: 38px;
+    font-size: 42px;
+
     font-weight: 200;
-    margin-left: 8px;
-    line-height: 1;
+
+    margin-left: 10px;
 }
 
 
 /* =========================
-   WARNA TOMBOL
+   WARNA MASING-MASING TOMBOL
 ========================= */
 
-.saweria .button-bg {
-    background: linear-gradient(
-        135deg,
-        #ff9200,
-        #ff6500
-    );
+.saweria {
+    background:
+        linear-gradient(
+            135deg,
+            #ff9200,
+            #ff6500
+        );
+
+    box-shadow:
+        0 0 18px rgba(255,130,0,0.45),
+        0 8px 25px rgba(0,0,0,0.4);
 }
 
-.sociabuzz .button-bg {
-    background: linear-gradient(
-        135deg,
-        #ff005d,
-        #ff315e
-    );
+.saweria::after {
+    background:
+        linear-gradient(
+            135deg,
+            #ff9200,
+            #ff6500
+        );
 }
 
-.discord .button-bg {
-    background: linear-gradient(
-        135deg,
-        #292b75,
-        #6a36d9
-    );
+
+.sociabuzz {
+    background:
+        linear-gradient(
+            135deg,
+            #ff005d,
+            #ff315e
+        );
+
+    box-shadow:
+        0 0 18px rgba(255,0,93,0.4),
+        0 8px 25px rgba(0,0,0,0.4);
 }
 
-.instagram .button-bg {
-    background: linear-gradient(
-        135deg,
-        #4a23a5,
-        #e6007e,
-        #ff8500
-    );
+.sociabuzz::after {
+    background:
+        linear-gradient(
+            135deg,
+            #ff005d,
+            #ff315e
+        );
 }
 
-.telegram .button-bg {
-    background: linear-gradient(
-        135deg,
-        #1378b8,
-        #29a9e8
-    );
+
+.discord {
+    background:
+        linear-gradient(
+            135deg,
+            #292b75,
+            #6a36d9
+        );
+
+    box-shadow:
+        0 0 18px rgba(90,60,255,0.45),
+        0 8px 25px rgba(0,0,0,0.4);
 }
 
-.spotify .button-bg {
-    background: linear-gradient(
-        135deg,
-        #062d1b,
-        #087d43
-    );
+.discord::after {
+    background:
+        linear-gradient(
+            135deg,
+            #292b75,
+            #6a36d9
+        );
+}
+
+
+.instagram {
+    background:
+        linear-gradient(
+            135deg,
+            #4a23a5,
+            #e6007e,
+            #ff8500
+        );
+
+    box-shadow:
+        0 0 18px rgba(255,0,130,0.4),
+        0 8px 25px rgba(0,0,0,0.4);
+}
+
+.instagram::after {
+    background:
+        linear-gradient(
+            135deg,
+            #4a23a5,
+            #e6007e,
+            #ff8500
+        );
+}
+
+
+.telegram {
+    background:
+        linear-gradient(
+            135deg,
+            #1378b8,
+            #29a9e8
+        );
+
+    box-shadow:
+        0 0 18px rgba(0,150,255,0.4),
+        0 8px 25px rgba(0,0,0,0.4);
+}
+
+.telegram::after {
+    background:
+        linear-gradient(
+            135deg,
+            #1378b8,
+            #29a9e8
+        );
+}
+
+
+.spotify {
+    background:
+        linear-gradient(
+            135deg,
+            #062d1b,
+            #087d43
+        );
+
+    box-shadow:
+        0 0 18px rgba(0,255,120,0.3),
+        0 8px 25px rgba(0,0,0,0.4);
+}
+
+.spotify::after {
+    background:
+        linear-gradient(
+            135deg,
+            #062d1b,
+            #087d43
+        );
+}
+
+
+/* =========================
+   AGAR ISI TOMBOL
+   TETAP DI ATAS
+========================= */
+
+.link .icon,
+.link .info,
+.link .arrow {
+    position: relative;
+
+    z-index: 2;
 }
 
 
@@ -405,23 +524,33 @@ h1 {
 
 footer {
     text-align: center;
-    margin-top: 40px;
+
+    margin-top: 42px;
+
     padding-bottom: 15px;
+
+    color:
+        rgba(255,255,255,0.65);
 }
 
+
+/* CREATED BY */
+
 .created {
-    font-size: 13px;
-    font-weight: 700;
-    letter-spacing: 4px;
-    color: rgba(255,255,255,0.75);
+    font-size: 15px;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 8px;
 }
 
 .since {
-    margin-top: 7px;
-    font-size: 10px;
-    font-weight: 600;
-    letter-spacing: 5px;
-    color: rgba(255,255,255,0.35);
+    font-size: 11px;
+
+    letter-spacing: 4px;
+
+    color:
+        rgba(255,255,255,0.4);
 }
 
 
@@ -432,57 +561,82 @@ footer {
 @media (max-width: 480px) {
 
     .container {
-        padding: 40px 16px 35px;
+        padding:
+            35px 16px 35px;
     }
+
 
     .profile {
-        width: 155px;
-        height: 155px;
+        width: 150px;
+        height: 150px;
     }
+
 
     h1 {
-        font-size: 45px;
+        font-size: 44px;
     }
+
 
     .link {
-        min-height: 80px;
-        padding: 11px 14px;
+        min-height: 88px;
+
+        padding:
+            14px 16px;
+
+        border-radius: 20px;
     }
+
+
+    .link::after {
+        border-radius: 18px;
+    }
+
 
     .icon {
-        width: 49px;
-        height: 49px;
-        min-width: 49px;
+        width: 52px;
+        height: 52px;
 
-        font-size: 24px;
-        margin-right: 13px;
+        min-width: 52px;
+
+        font-size: 25px;
+
+        margin-right: 14px;
     }
+
 
     .name {
-        font-size: 20px;
+        font-size: 21px;
     }
+
 
     .sub {
-        font-size: 12px;
+        font-size: 13px;
     }
 
+
     .arrow {
-        font-size: 35px;
+        font-size: 38px;
     }
 
 }
-
 </style>
+
 </head>
+
 
 <body>
 
 <div class="container">
 
+
     <!-- FOTO PROFIL -->
 
     <div class="profile">
-        <img src="./IMG_0205.jpeg" alt="ZER">
+
+        <img
+            src="IMG_0205.jpeg"
+            alt="ZER">
+
     </div>
 
 
@@ -496,8 +650,12 @@ footer {
     <!-- DESKRIPSI -->
 
     <div class="description">
-        Welcome to my official links.<br>
+
+        Welcome to my official links.
+        <br>
+
         Support and connect with me below.
+
     </div>
 
 
@@ -508,122 +666,183 @@ footer {
 
         <!-- SAWERIA -->
 
-        <a class="link saweria"
-           href="https://saweria.co/ZERVDRA"
-           target="_blank">
+        <a
+            class="link saweria"
+            href="https://saweria.co/ZERVDRA"
+            target="_blank">
 
-            <div class="button-bg"></div>
-
-            <div class="icon">☕</div>
-
-            <div class="info">
-                <div class="name">Saweria</div>
-                <div class="sub">Support me via Saweria</div>
+            <div class="icon">
+                ☕
             </div>
 
-            <div class="arrow">›</div>
+            <div class="info">
+
+                <div class="name">
+                    Saweria
+                </div>
+
+                <div class="sub">
+                    Support me via Saweria
+                </div>
+
+            </div>
+
+            <div class="arrow">
+                ›
+            </div>
 
         </a>
 
 
         <!-- SOCIABUZZ -->
 
-        <a class="link sociabuzz"
-           href="https://sociabuzz.com/zervdra/tribe"
-           target="_blank">
+        <a
+            class="link sociabuzz"
+            href="https://sociabuzz.com/zervdra/tribe"
+            target="_blank">
 
-            <div class="button-bg"></div>
-
-            <div class="icon">💖</div>
-
-            <div class="info">
-                <div class="name">Sociabuzz</div>
-                <div class="sub">Support me via Sociabuzz</div>
+            <div class="icon">
+                💖
             </div>
 
-            <div class="arrow">›</div>
+            <div class="info">
+
+                <div class="name">
+                    Sociabuzz
+                </div>
+
+                <div class="sub">
+                    Support me via Sociabuzz
+                </div>
+
+            </div>
+
+            <div class="arrow">
+                ›
+            </div>
 
         </a>
 
 
         <!-- DISCORD -->
 
-        <a class="link discord"
-           href="https://discord.gg/cCE7X5DbN"
-           target="_blank">
+        <a
+            class="link discord"
+            href="https://discord.gg/cCE7X5DbN"
+            target="_blank">
 
-            <div class="button-bg"></div>
-
-            <div class="icon">🎮</div>
-
-            <div class="info">
-                <div class="name">Discord</div>
-                <div class="sub">Join my Discord server</div>
+            <div class="icon">
+                🎮
             </div>
 
-            <div class="arrow">›</div>
+            <div class="info">
+
+                <div class="name">
+                    Discord
+                </div>
+
+                <div class="sub">
+                    Join my Discord server
+                </div>
+
+            </div>
+
+            <div class="arrow">
+                ›
+            </div>
 
         </a>
 
 
         <!-- INSTAGRAM -->
 
-        <a class="link instagram"
-           href="https://www.instagram.com/zervdra_14?igsh=MTNsa2Y5aDhveGw2Zg%3D%3D&utm_source=qr"
-           target="_blank">
+        <a
+            class="link instagram"
+            href="https://www.instagram.com/zervdra_14?igsh=MTNsa2Y5aDhveGw2Zg%3D%3D"
+            target="_blank">
 
-            <div class="button-bg"></div>
-
-            <div class="icon">📸</div>
-
-            <div class="info">
-                <div class="name">Instagram</div>
-                <div class="sub">Follow me on Instagram</div>
+            <div class="icon">
+                📸
             </div>
 
-            <div class="arrow">›</div>
+            <div class="info">
+
+                <div class="name">
+                    Instagram
+                </div>
+
+                <div class="sub">
+                    Follow me on Instagram
+                </div>
+
+            </div>
+
+            <div class="arrow">
+                ›
+            </div>
 
         </a>
 
 
         <!-- TELEGRAM -->
 
-        <a class="link telegram"
-           href="https://t.me/gabisaflexing/2"
-           target="_blank">
+        <a
+            class="link telegram"
+            href="https://t.me/gabisaflexing/2"
+            target="_blank">
 
-            <div class="button-bg"></div>
-
-            <div class="icon">✈️</div>
-
-            <div class="info">
-                <div class="name">Telegram</div>
-                <div class="sub">Join my Telegram channel</div>
+            <div class="icon">
+                ✈️
             </div>
 
-            <div class="arrow">›</div>
+            <div class="info">
+
+                <div class="name">
+                    Telegram
+                </div>
+
+                <div class="sub">
+                    Join my Telegram channel
+                </div>
+
+            </div>
+
+            <div class="arrow">
+                ›
+            </div>
 
         </a>
 
 
         <!-- SPOTIFY -->
 
-        <a class="link spotify"
-           href="https://open.spotify.com/playlist/3KzUma6ZeY17qOoJVjRVDD?si=VqNY-Q3xSA6uW2Ul5fRcrg&utm_source=copy-link&pi=Zh42Z8FBRRCwl"
-           target="_blank">
+        <a
+            class="link spotify"
+            href="https://open.spotify.com/playlist/3KzUma6ZeY17qOoJVjRVDD"
+            target="_blank">
 
-            <div class="button-bg"></div>
-
-            <div class="icon">🎵</div>
-
-            <div class="info">
-                <div class="name">Spotify</div>
-                <div class="sub">Listen to my playlist</div>
+            <div class="icon">
+                🎵
             </div>
 
-            <div class="arrow">›</div>
+            <div class="info">
+
+                <div class="name">
+                    Spotify
+                </div>
+
+                <div class="sub">
+                    Listen to my playlist
+                </div>
+
+            </div>
+
+            <div class="arrow">
+                ›
+            </div>
 
         </a>
+
 
     </div>
 
@@ -641,6 +860,7 @@ footer {
         </div>
 
     </footer>
+
 
 </div>
 
