@@ -7,6 +7,11 @@
 <title>ZER | Official Links</title>
 
 <style>
+
+/* =========================
+   BASIC
+========================= */
+
 * {
     margin: 0;
     padding: 0;
@@ -26,12 +31,7 @@ body {
         radial-gradient(circle at 50% 0%, rgba(255, 0, 70, 0.18), transparent 28%),
         radial-gradient(circle at 10% 50%, rgba(120, 0, 255, 0.22), transparent 30%),
         radial-gradient(circle at 90% 60%, rgba(0, 130, 255, 0.18), transparent 30%),
-        linear-gradient(
-            180deg,
-            #05050d 0%,
-            #090014 45%,
-            #03050d 100%
-        );
+        linear-gradient(180deg, #05050d 0%, #090014 45%, #03050d 100%);
 
     overflow-x: hidden;
 }
@@ -40,7 +40,6 @@ body::before {
     content: "";
     position: fixed;
     inset: 0;
-
     pointer-events: none;
     opacity: 0.35;
 
@@ -51,7 +50,6 @@ body::before {
             rgba(0,255,255,0.04) 50%,
             transparent 100%
         ),
-
         repeating-linear-gradient(
             90deg,
             transparent 0px,
@@ -61,15 +59,16 @@ body::before {
         );
 }
 
-/* CONTAINER */
+
+/* =========================
+   CONTAINER
+========================= */
 
 .container {
     width: 100%;
     max-width: 620px;
-
     margin: auto;
-
-    padding: 45px 22px 45px;
+    padding: 35px 22px 45px;
 
     position: relative;
     z-index: 1;
@@ -81,14 +80,13 @@ body::before {
 ========================= */
 
 .profile {
-    width: 175px;
-    height: 175px;
+    width: 165px;
+    height: 165px;
 
     margin: 0 auto 22px;
 
     border-radius: 50%;
-
-    padding: 6px;
+    padding: 5px;
 
     background:
         linear-gradient(
@@ -109,7 +107,6 @@ body::before {
     height: 100%;
 
     object-fit: cover;
-
     border-radius: 50%;
 
     display: block;
@@ -155,7 +152,7 @@ h1 {
 
     color: #dddddd;
 
-    margin-bottom: 32px;
+    margin-bottom: 35px;
 }
 
 
@@ -166,13 +163,12 @@ h1 {
 .links {
     display: flex;
     flex-direction: column;
-
-    gap: 16px;
+    gap: 18px;
 }
 
 
 /* =========================
-   TOMBOL
+   BUTTON
 ========================= */
 
 .link {
@@ -180,22 +176,21 @@ h1 {
 
     isolation: isolate;
 
-    text-decoration: none;
+    overflow: visible;
 
+    text-decoration: none;
     color: white;
 
-    min-height: 92px;
+    min-height: 96px;
 
-    border-radius: 22px;
+    border-radius: 24px;
 
     display: flex;
     align-items: center;
 
     padding: 15px 20px;
 
-    overflow: hidden;
-
-    border: 1px solid rgba(255,255,255,0.18);
+    border: 1px solid rgba(255,255,255,0.22);
 
     transition:
         transform 0.25s ease,
@@ -203,12 +198,13 @@ h1 {
 
     box-shadow:
         0 8px 25px rgba(0,0,0,0.4),
-        inset 0 1px 0 rgba(255,255,255,0.15);
+        inset 0 1px 0 rgba(255,255,255,0.12);
 }
 
 
 /* =========================
-   GARIS BERGERAK KELILING
+   GARIS BERGERAK
+   BENAR-BENAR DI PINGGIR
 ========================= */
 
 .link::before {
@@ -216,92 +212,87 @@ h1 {
 
     position: absolute;
 
-    width: 180%;
-    height: 350%;
+    /*
+    Garis berada sedikit
+    di luar pinggiran tombol
+    */
+    inset: -2px;
 
-    left: 50%;
-    top: 50%;
+    border-radius: 26px;
 
-    transform:
-        translate(-50%, -50%)
-        rotate(0deg);
+    padding: 2px;
 
+    pointer-events: none;
+
+    /*
+    Cahaya hanya sebagian,
+    sisanya transparan
+    */
     background:
         conic-gradient(
             from 0deg,
-
             transparent 0deg,
-            transparent 285deg,
-
-            rgba(255,255,255,0.15) 300deg,
-
-            #ffffff 315deg,
-
-            rgba(255,255,255,0.15) 330deg,
-
-            transparent 345deg,
+            transparent 250deg,
+            rgba(255,255,255,0.15) 275deg,
+            rgba(255,255,255,1) 300deg,
+            rgba(255,255,255,0.25) 325deg,
             transparent 360deg
         );
 
-    animation:
-        borderMove 3s linear infinite;
+    /*
+    BAGIAN PENTING:
+    hanya menampilkan BORDER,
+    bukan bagian tengah
+    */
 
-    z-index: -2;
+    -webkit-mask:
+        linear-gradient(#000 0 0) content-box,
+        linear-gradient(#000 0 0);
+
+    -webkit-mask-composite: xor;
+
+    mask-composite: exclude;
+
+    animation: borderRun 3.2s linear infinite;
+
+    z-index: 2;
 }
 
 
-/* BAGIAN DALAM
-   AGAR CAHAYA HANYA TERLIHAT
-   DI PINGGIRAN */
+/* Animasi berputar */
+@keyframes borderRun {
 
-.link::after {
-    content: "";
-
-    position: absolute;
-
-    inset: 2px;
-
-    border-radius: 20px;
-
-    z-index: -1;
-}
-
-
-/* =========================
-   ANIMASI PUTAR 360
-========================= */
-
-@keyframes borderMove {
-
-    0% {
-        transform:
-            translate(-50%, -50%)
-            rotate(0deg);
+    from {
+        transform: rotate(0deg);
     }
 
-    100% {
-        transform:
-            translate(-50%, -50%)
-            rotate(360deg);
+    to {
+        transform: rotate(360deg);
     }
 
 }
 
 
-/* EFEK SAAT DIKLIK */
+/* Efek saat disentuh */
 
 .link:active {
-    transform: scale(0.97);
-}
-
-.link:hover {
-    transform: translateY(-2px);
+    transform: scale(0.975);
 }
 
 
 /* =========================
-   ICON
+   ISI TOMBOL
 ========================= */
+
+.icon,
+.info,
+.arrow {
+    position: relative;
+    z-index: 3;
+}
+
+
+/* ICON */
 
 .icon {
     width: 58px;
@@ -309,13 +300,13 @@ h1 {
 
     min-width: 58px;
 
-    border-radius: 17px;
+    border-radius: 18px;
 
     display: flex;
     align-items: center;
     justify-content: center;
 
-    font-size: 28px;
+    font-size: 29px;
 
     margin-right: 16px;
 
@@ -327,7 +318,7 @@ h1 {
 }
 
 
-/* INFO */
+/* TEXT */
 
 .info {
     flex: 1;
@@ -335,34 +326,38 @@ h1 {
 
 .name {
     font-size: 24px;
-
     font-weight: 800;
 
     margin-bottom: 5px;
 }
 
 .sub {
-    font-size: 14px;
+    font-size: 15px;
 
     color:
         rgba(255,255,255,0.88);
 }
 
 
-/* PANAH */
+/* ARROW */
 
 .arrow {
-    font-size: 42px;
+    font-size: 43px;
 
     font-weight: 200;
 
     margin-left: 10px;
+
+    line-height: 1;
 }
 
 
 /* =========================
-   WARNA MASING-MASING TOMBOL
+   WARNA TOMBOL
 ========================= */
+
+
+/* SAWERIA */
 
 .saweria {
     background:
@@ -377,15 +372,8 @@ h1 {
         0 8px 25px rgba(0,0,0,0.4);
 }
 
-.saweria::after {
-    background:
-        linear-gradient(
-            135deg,
-            #ff9200,
-            #ff6500
-        );
-}
 
+/* SOCIABUZZ */
 
 .sociabuzz {
     background:
@@ -400,15 +388,8 @@ h1 {
         0 8px 25px rgba(0,0,0,0.4);
 }
 
-.sociabuzz::after {
-    background:
-        linear-gradient(
-            135deg,
-            #ff005d,
-            #ff315e
-        );
-}
 
+/* DISCORD */
 
 .discord {
     background:
@@ -423,15 +404,8 @@ h1 {
         0 8px 25px rgba(0,0,0,0.4);
 }
 
-.discord::after {
-    background:
-        linear-gradient(
-            135deg,
-            #292b75,
-            #6a36d9
-        );
-}
 
+/* INSTAGRAM */
 
 .instagram {
     background:
@@ -447,16 +421,8 @@ h1 {
         0 8px 25px rgba(0,0,0,0.4);
 }
 
-.instagram::after {
-    background:
-        linear-gradient(
-            135deg,
-            #4a23a5,
-            #e6007e,
-            #ff8500
-        );
-}
 
+/* TELEGRAM */
 
 .telegram {
     background:
@@ -471,15 +437,8 @@ h1 {
         0 8px 25px rgba(0,0,0,0.4);
 }
 
-.telegram::after {
-    background:
-        linear-gradient(
-            135deg,
-            #1378b8,
-            #29a9e8
-        );
-}
 
+/* SPOTIFY */
 
 .spotify {
     background:
@@ -494,29 +453,6 @@ h1 {
         0 8px 25px rgba(0,0,0,0.4);
 }
 
-.spotify::after {
-    background:
-        linear-gradient(
-            135deg,
-            #062d1b,
-            #087d43
-        );
-}
-
-
-/* =========================
-   AGAR ISI TOMBOL
-   TETAP DI ATAS
-========================= */
-
-.link .icon,
-.link .info,
-.link .arrow {
-    position: relative;
-
-    z-index: 2;
-}
-
 
 /* =========================
    FOOTER
@@ -525,32 +461,32 @@ h1 {
 footer {
     text-align: center;
 
-    margin-top: 42px;
-
+    margin-top: 48px;
     padding-bottom: 15px;
 
     color:
-        rgba(255,255,255,0.65);
+        rgba(255,255,255,0.72);
 }
 
-
-/* CREATED BY */
-
 .created {
-    font-size: 15px;
+    font-size: 18px;
 
-    letter-spacing: 3px;
+    font-weight: 700;
 
-    margin-bottom: 8px;
+    letter-spacing: 7px;
+
+    margin-bottom: 14px;
 }
 
 .since {
-    font-size: 11px;
+    font-size: 12px;
 
-    letter-spacing: 4px;
+    font-weight: 700;
+
+    letter-spacing: 8px;
 
     color:
-        rgba(255,255,255,0.4);
+        rgba(255,255,255,0.42);
 }
 
 
@@ -562,65 +498,67 @@ footer {
 
     .container {
         padding:
-            35px 16px 35px;
+            30px 16px 35px;
     }
-
 
     .profile {
-        width: 150px;
-        height: 150px;
+        width: 145px;
+        height: 145px;
     }
-
 
     h1 {
-        font-size: 44px;
+        font-size: 45px;
     }
 
-
     .link {
-        min-height: 88px;
+        min-height: 92px;
 
         padding:
             14px 16px;
 
-        border-radius: 20px;
+        border-radius: 22px;
     }
 
-
-    .link::after {
-        border-radius: 18px;
+    .link::before {
+        border-radius: 24px;
     }
-
 
     .icon {
-        width: 52px;
-        height: 52px;
+        width: 54px;
+        height: 54px;
 
-        min-width: 52px;
+        min-width: 54px;
 
-        font-size: 25px;
+        font-size: 27px;
 
         margin-right: 14px;
     }
-
 
     .name {
         font-size: 21px;
     }
 
-
     .sub {
         font-size: 13px;
     }
 
-
     .arrow {
-        font-size: 38px;
+        font-size: 40px;
+    }
+
+    .created {
+        font-size: 16px;
+        letter-spacing: 5px;
+    }
+
+    .since {
+        font-size: 11px;
+        letter-spacing: 6px;
     }
 
 }
-</style>
 
+</style>
 </head>
 
 
@@ -632,11 +570,7 @@ footer {
     <!-- FOTO PROFIL -->
 
     <div class="profile">
-
-        <img
-            src="IMG_0205.jpeg"
-            alt="ZER">
-
+        <img src="IMG_0205.jpeg" alt="ZER">
     </div>
 
 
@@ -650,12 +584,8 @@ footer {
     <!-- DESKRIPSI -->
 
     <div class="description">
-
-        Welcome to my official links.
-        <br>
-
+        Welcome to my official links.<br>
         Support and connect with me below.
-
     </div>
 
 
@@ -669,14 +599,12 @@ footer {
         <a
             class="link saweria"
             href="https://saweria.co/ZERVDRA"
-            target="_blank">
+            target="_blank"
+        >
 
-            <div class="icon">
-                ☕
-            </div>
+            <div class="icon">☕</div>
 
             <div class="info">
-
                 <div class="name">
                     Saweria
                 </div>
@@ -684,7 +612,6 @@ footer {
                 <div class="sub">
                     Support me via Saweria
                 </div>
-
             </div>
 
             <div class="arrow">
@@ -699,11 +626,10 @@ footer {
         <a
             class="link sociabuzz"
             href="https://sociabuzz.com/zervdra/tribe"
-            target="_blank">
+            target="_blank"
+        >
 
-            <div class="icon">
-                💖
-            </div>
+            <div class="icon">💖</div>
 
             <div class="info">
 
@@ -729,11 +655,10 @@ footer {
         <a
             class="link discord"
             href="https://discord.gg/cCE7X5DbN"
-            target="_blank">
+            target="_blank"
+        >
 
-            <div class="icon">
-                🎮
-            </div>
+            <div class="icon">🎮</div>
 
             <div class="info">
 
@@ -758,12 +683,11 @@ footer {
 
         <a
             class="link instagram"
-            href="https://www.instagram.com/zervdra_14?igsh=MTNsa2Y5aDhveGw2Zg%3D%3D"
-            target="_blank">
+            href="https://www.instagram.com/zervdra_14?igsh=MTNsa2Y5aDhveGw2Zg%3D%3D&utm_source=qr"
+            target="_blank"
+        >
 
-            <div class="icon">
-                📸
-            </div>
+            <div class="icon">📸</div>
 
             <div class="info">
 
@@ -789,11 +713,10 @@ footer {
         <a
             class="link telegram"
             href="https://t.me/gabisaflexing/2"
-            target="_blank">
+            target="_blank"
+        >
 
-            <div class="icon">
-                ✈️
-            </div>
+            <div class="icon">✈️</div>
 
             <div class="info">
 
@@ -818,12 +741,11 @@ footer {
 
         <a
             class="link spotify"
-            href="https://open.spotify.com/playlist/3KzUma6ZeY17qOoJVjRVDD"
-            target="_blank">
+            href="https://open.spotify.com/playlist/3KzUma6ZeY17qOoJVjRVDD?si=VqNY-Q3xSA6uW2Ul5fRcrg&utm_source=copy-link&pi=Zh42Z8FBRRCwl"
+            target="_blank"
+        >
 
-            <div class="icon">
-                🎵
-            </div>
+            <div class="icon">🎵</div>
 
             <div class="info">
 
