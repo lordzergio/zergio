@@ -2,19 +2,11 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-
-<meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>ZER | Official Links</title>
 
 <style>
-
-/* =========================
-   RESET
-========================= */
-
 * {
     margin: 0;
     padding: 0;
@@ -25,76 +17,26 @@ html {
     scroll-behavior: smooth;
 }
 
-
-/* =========================
-   BODY
-========================= */
-
 body {
     min-height: 100vh;
-
-    font-family:
-        Arial,
-        Helvetica,
-        sans-serif;
-
+    font-family: Arial, Helvetica, sans-serif;
     color: white;
-
     background:
-
-        radial-gradient(
-            circle at 50% 0%,
-            rgba(255, 0, 70, 0.18),
-            transparent 28%
-        ),
-
-        radial-gradient(
-            circle at 10% 50%,
-            rgba(120, 0, 255, 0.22),
-            transparent 30%
-        ),
-
-        radial-gradient(
-            circle at 90% 60%,
-            rgba(0, 130, 255, 0.18),
-            transparent 30%
-        ),
-
-        linear-gradient(
-            180deg,
-            #05050d 0%,
-            #090014 45%,
-            #03050d 100%
-        );
-
+        radial-gradient(circle at 50% 0%, rgba(255, 0, 70, 0.18), transparent 28%),
+        radial-gradient(circle at 10% 50%, rgba(120, 0, 255, 0.22), transparent 30%),
+        radial-gradient(circle at 90% 60%, rgba(0, 130, 255, 0.18), transparent 30%),
+        linear-gradient(180deg, #05050d 0%, #090014 45%, #03050d 100%);
     overflow-x: hidden;
 }
 
-
-/* =========================
-   BACKGROUND EFFECT
-========================= */
-
 body::before {
     content: "";
-
     position: fixed;
-
     inset: 0;
-
     pointer-events: none;
-
     opacity: 0.35;
-
     background:
-
-        linear-gradient(
-            90deg,
-            transparent 0%,
-            rgba(0,255,255,0.04) 50%,
-            transparent 100%
-        ),
-
+        linear-gradient(90deg, transparent 0%, rgba(0,255,255,0.04) 50%, transparent 100%),
         repeating-linear-gradient(
             90deg,
             transparent 0px,
@@ -104,812 +46,315 @@ body::before {
         );
 }
 
-
-/* =========================
-   CONTAINER
-========================= */
-
 .container {
     width: 100%;
-
     max-width: 620px;
-
     margin: auto;
-
-    padding:
-        55px
-        22px
-        45px;
-
+    padding: 55px 22px 45px;
     position: relative;
-
     z-index: 1;
 }
 
-
-/* =========================
-   FOTO PROFIL
-========================= */
-
+/* FOTO */
 .profile {
     width: 190px;
-
     height: 190px;
-
-    margin:
-        0 auto
-        25px;
-
+    margin: 0 auto 25px;
     border-radius: 50%;
-
     padding: 6px;
-
-    background:
-
-        linear-gradient(
-            135deg,
-            #ffffff,
-            #ff003c,
-            #ff0066
-        );
-
+    background: linear-gradient(135deg, #ffffff, #ff003c, #ff0066);
     box-shadow:
-
-        0 0 15px
-        rgba(255,0,70,0.9),
-
-        0 0 40px
-        rgba(255,0,70,0.6),
-
-        0 0 80px
-        rgba(255,0,70,0.3);
+        0 0 15px rgba(255,0,70,0.9),
+        0 0 40px rgba(255,0,70,0.6),
+        0 0 80px rgba(255,0,70,0.3);
 }
-
 
 .profile img {
     width: 100%;
-
     height: 100%;
-
     object-fit: cover;
-
     border-radius: 50%;
-
     display: block;
 }
 
-
-/* =========================
-   JUDUL
-========================= */
-
+/* JUDUL */
 h1 {
     text-align: center;
-
     font-size: 54px;
-
     font-weight: 900;
-
     letter-spacing: 7px;
-
     text-shadow:
-
-        0 0 10px
-        rgba(255,255,255,0.5),
-
-        0 0 25px
-        rgba(255,0,70,0.7);
+        0 0 10px rgba(255,255,255,0.5),
+        0 0 25px rgba(255,0,70,0.7);
 }
-
-
-/* =========================
-   GARIS BAWAH JUDUL
-========================= */
 
 .line {
     width: 75px;
-
     height: 4px;
-
-    margin:
-        15px auto
-        20px;
-
+    margin: 15px auto 20px;
     border-radius: 50px;
-
     background: #ff174d;
-
-    box-shadow:
-        0 0 15px
-        #ff174d;
+    box-shadow: 0 0 15px #ff174d;
 }
-
-
-/* =========================
-   DESKRIPSI
-========================= */
 
 .description {
     text-align: center;
-
     font-size: 17px;
-
     line-height: 1.7;
-
     color: #dddddd;
-
     margin-bottom: 35px;
 }
 
-
-/* =========================
-   LINKS
-========================= */
-
+/* BUTTON */
 .links {
     display: flex;
-
     flex-direction: column;
-
-    gap: 22px;
+    gap: 18px;
 }
-
-
-/* =========================
-   TOMBOL UTAMA
-========================= */
 
 .link {
     text-decoration: none;
-
     color: white;
-
-    min-height: 100px;
-
+    min-height: 105px;
     border-radius: 22px;
-
     display: flex;
-
     align-items: center;
-
-    padding:
-        16px
-        20px;
-
-    position: relative;
-
-    /* TIDAK ADA BORDER */
-    border: none;
-
-    /* TIDAK ADA GARIS PUTIH */
-    outline: none;
-
-    -webkit-tap-highlight-color: transparent;
-
-    transform: scale(1);
-
-    transform-origin: center;
-
-    animation:
-        heartbeat
-        2.8s
-        ease-in-out
-        infinite;
-
-    will-change:
-        transform,
-        box-shadow;
-
-    transition:
-        transform 0.15s ease,
-        filter 0.15s ease;
+    padding: 18px 22px;
+    transition: 0.25s ease;
+    border: 1px solid rgba(255,255,255,0.28);
+    box-shadow:
+        0 8px 25px rgba(0,0,0,0.4),
+        inset 0 1px 0 rgba(255,255,255,0.15);
 }
-
-
-/* =========================
-   EFEK DENYUT JANTUNG
-========================= */
-
-@keyframes heartbeat {
-
-    0% {
-        transform: scale(1);
-        filter: brightness(1);
-    }
-
-    15% {
-        transform: scale(1.035);
-        filter: brightness(1.08);
-    }
-
-    30% {
-        transform: scale(1);
-        filter: brightness(1);
-    }
-
-    45% {
-        transform: scale(1.02);
-        filter: brightness(1.04);
-    }
-
-    60% {
-        transform: scale(1);
-        filter: brightness(1);
-    }
-
-    100% {
-        transform: scale(1);
-        filter: brightness(1);
-    }
-
-}
-
-
-/* =========================
-   SAAT DITEKAN
-   KEMBALI UKURAN NORMAL
-========================= */
 
 .link:active {
-    animation: none;
-
-    transform: scale(1);
-
-    filter: brightness(1);
+    transform: scale(0.97);
 }
-
-
-/* =========================
-   HILANGKAN SEMUA
-   GARIS / PSEUDO ELEMENT
-========================= */
-
-.link::before,
-.link::after {
-    content: none !important;
-
-    display: none !important;
-}
-
-
-/* =========================
-   ICON
-========================= */
 
 .icon {
-    width: 58px;
-
-    height: 58px;
-
-    min-width: 58px;
-
+    width: 62px;
+    height: 62px;
+    min-width: 62px;
     border-radius: 18px;
-
     display: flex;
-
     align-items: center;
-
     justify-content: center;
-
-    font-size: 29px;
-
-    margin-right: 16px;
-
-    background:
-        rgba(255,255,255,0.13);
-
-    box-shadow:
-
-        inset
-        0 0 15px
-        rgba(255,255,255,0.08);
+    font-size: 32px;
+    margin-right: 17px;
+    background: rgba(255,255,255,0.13);
+    box-shadow: inset 0 0 15px rgba(255,255,255,0.08);
 }
-
-
-/* =========================
-   INFO
-========================= */
 
 .info {
     flex: 1;
 }
 
-
-/* =========================
-   NAMA
-========================= */
-
 .name {
-    font-size: 23px;
-
+    font-size: 25px;
     font-weight: 800;
-
-    margin-bottom: 6px;
+    margin-bottom: 7px;
 }
-
-
-/* =========================
-   SUBTEXT
-========================= */
 
 .sub {
-    font-size: 14px;
-
-    color:
-        rgba(255,255,255,0.88);
+    font-size: 15px;
+    color: rgba(255,255,255,0.88);
 }
-
-
-/* =========================
-   PANAH
-========================= */
 
 .arrow {
-    font-size: 42px;
-
+    font-size: 45px;
     font-weight: 200;
-
     margin-left: 10px;
-
-    line-height: 1;
 }
 
-
-/* =========================
-   SAWERIA
-========================= */
-
+/* WARNA TOMBOL */
 .saweria {
-
-    background:
-
-        linear-gradient(
-            135deg,
-            #ff9200,
-            #ff6500
-        );
-
+    background: linear-gradient(135deg, #ff9200, #ff6500);
     box-shadow:
-
-        0 0 18px
-        rgba(255,130,0,0.40),
-
-        0 10px 28px
-        rgba(0,0,0,0.38);
+        0 0 18px rgba(255,130,0,0.45),
+        0 8px 25px rgba(0,0,0,0.4);
 }
-
-
-/* =========================
-   SOCIABUZZ
-========================= */
 
 .sociabuzz {
-
-    background:
-
-        linear-gradient(
-            135deg,
-            #ff005d,
-            #ff315e
-        );
-
+    background: linear-gradient(135deg, #ff005d, #ff315e);
     box-shadow:
-
-        0 0 18px
-        rgba(255,0,93,0.38),
-
-        0 10px 28px
-        rgba(0,0,0,0.38);
+        0 0 18px rgba(255,0,93,0.4),
+        0 8px 25px rgba(0,0,0,0.4);
 }
-
-
-/* =========================
-   DISCORD
-========================= */
 
 .discord {
-
-    background:
-
-        linear-gradient(
-            135deg,
-            #292b75,
-            #6a36d9
-        );
-
+    background: linear-gradient(135deg, #292b75, #6a36d9);
     box-shadow:
-
-        0 0 18px
-        rgba(90,60,255,0.40),
-
-        0 10px 28px
-        rgba(0,0,0,0.38);
+        0 0 18px rgba(90,60,255,0.45),
+        0 8px 25px rgba(0,0,0,0.4);
 }
-
-
-/* =========================
-   INSTAGRAM
-========================= */
 
 .instagram {
-
-    background:
-
-        linear-gradient(
-            135deg,
-            #4a23a5,
-            #e6007e,
-            #ff8500
-        );
-
+    background: linear-gradient(135deg, #4a23a5, #e6007e, #ff8500);
     box-shadow:
-
-        0 0 18px
-        rgba(255,0,130,0.38),
-
-        0 10px 28px
-        rgba(0,0,0,0.38);
+        0 0 18px rgba(255,0,130,0.4),
+        0 8px 25px rgba(0,0,0,0.4);
 }
-
-
-/* =========================
-   TELEGRAM
-========================= */
 
 .telegram {
-
-    background:
-
-        linear-gradient(
-            135deg,
-            #1378b8,
-            #29a9e8
-        );
-
+    background: linear-gradient(135deg, #1378b8, #29a9e8);
     box-shadow:
-
-        0 0 18px
-        rgba(0,150,255,0.38),
-
-        0 10px 28px
-        rgba(0,0,0,0.38);
+        0 0 18px rgba(0,150,255,0.4),
+        0 8px 25px rgba(0,0,0,0.4);
 }
-
-
-/* =========================
-   SPOTIFY
-========================= */
 
 .spotify {
-
-    background:
-
-        linear-gradient(
-            135deg,
-            #062d1b,
-            #087d43
-        );
-
+    background: linear-gradient(135deg, #062d1b, #087d43);
     box-shadow:
-
-        0 0 18px
-        rgba(0,255,120,0.28),
-
-        0 10px 28px
-        rgba(0,0,0,0.38);
+        0 0 18px rgba(0,255,120,0.3),
+        0 8px 25px rgba(0,0,0,0.4);
 }
 
-
-/* =========================
-   FOOTER
-========================= */
-
+/* FOOTER */
 footer {
     text-align: center;
-
-    margin-top: 55px;
-
-    padding-bottom: 20px;
-
-    color:
-        rgba(255,255,255,0.72);
+    margin-top: 45px;
+    padding-bottom: 15px;
+    font-size: 17px;
+    letter-spacing: 4px;
+    color: #cccccc;
 }
 
-
-.created {
-    font-size: 18px;
-
-    font-weight: 700;
-
-    letter-spacing: 7px;
-
-    margin-bottom: 12px;
-}
-
-
-.since {
-    font-size: 13px;
-
-    font-weight: 600;
-
-    letter-spacing: 9px;
-
-    color:
-        rgba(255,255,255,0.45);
-}
-
-
-/* =========================
-   MOBILE
-========================= */
-
+/* MOBILE */
 @media (max-width: 480px) {
-
     .container {
-        padding:
-            45px
-            16px
-            35px;
+        padding: 45px 16px 35px;
     }
-
 
     .profile {
         width: 165px;
-
         height: 165px;
     }
-
 
     h1 {
         font-size: 45px;
     }
 
-
-    .links {
-        gap: 20px;
-    }
-
-
     .link {
         min-height: 95px;
-
-        padding:
-            15px
-            17px;
+        padding: 15px 17px;
     }
-
 
     .icon {
         width: 54px;
-
         height: 54px;
-
         min-width: 54px;
-
         font-size: 27px;
-
         margin-right: 14px;
     }
-
 
     .name {
         font-size: 21px;
     }
 
-
     .sub {
         font-size: 13px;
     }
-
-
-    .created {
-        font-size: 16px;
-
-        letter-spacing: 5px;
-    }
-
-
-    .since {
-        font-size: 11px;
-
-        letter-spacing: 7px;
-    }
-
 }
-
 </style>
 </head>
-
 
 <body>
 
 <div class="container">
 
-
     <!-- FOTO PROFIL -->
-
     <div class="profile">
-        <img
-            src="IMG_0205.jpeg"
-            alt="ZER">
+        <img src="IMG_0205.jpeg" alt="ZER">
     </div>
-
-
-    <!-- JUDUL -->
 
     <h1>ZER</h1>
 
     <div class="line"></div>
-
-
-    <!-- DESKRIPSI -->
 
     <div class="description">
         Welcome to my official links.<br>
         Support and connect with me below.
     </div>
 
-
-    <!-- LINKS -->
-
     <div class="links">
 
-
         <!-- SAWERIA -->
-
-        <a
-            class="link saweria"
-            href="https://saweria.co/ZERVDRA"
-            target="_blank"
-            rel="noopener noreferrer">
-
+        <a class="link saweria"
+           href="https://saweria.co/ZERVDRA"
+           target="_blank">
             <div class="icon">☕</div>
-
             <div class="info">
                 <div class="name">Saweria</div>
-
-                <div class="sub">
-                    Support me via Saweria
-                </div>
+                <div class="sub">Support me via Saweria</div>
             </div>
-
             <div class="arrow">›</div>
-
         </a>
-
 
         <!-- SOCIABUZZ -->
-
-        <a
-            class="link sociabuzz"
-            href="https://sociabuzz.com/zervdra/tribe"
-            target="_blank"
-            rel="noopener noreferrer">
-
+        <a class="link sociabuzz"
+           href="https://sociabuzz.com/zervdra/tribe"
+           target="_blank">
             <div class="icon">💖</div>
-
             <div class="info">
                 <div class="name">Sociabuzz</div>
-
-                <div class="sub">
-                    Support me via Sociabuzz
-                </div>
+                <div class="sub">Support me via Sociabuzz</div>
             </div>
-
             <div class="arrow">›</div>
-
         </a>
-
 
         <!-- DISCORD -->
-
-        <a
-            class="link discord"
-            href="https://discord.gg/cCE7X5DbN"
-            target="_blank"
-            rel="noopener noreferrer">
-
+        <a class="link discord"
+           href="https://discord.gg/cCE7X5DbN"
+           target="_blank">
             <div class="icon">🎮</div>
-
             <div class="info">
                 <div class="name">Discord</div>
-
-                <div class="sub">
-                    Join my Discord server
-                </div>
+                <div class="sub">Join my Discord server</div>
             </div>
-
             <div class="arrow">›</div>
-
         </a>
-
 
         <!-- INSTAGRAM -->
-
-        <a
-            class="link instagram"
-            href="https://www.instagram.com/zervdra_14"
-            target="_blank"
-            rel="noopener noreferrer">
-
+        <a class="link instagram"
+           href="https://www.instagram.com/zervdra_14?igsh=MTNsa2Y5aDhveGw2Zg%3D%3D&utm_source=qr"
+           target="_blank">
             <div class="icon">📸</div>
-
             <div class="info">
                 <div class="name">Instagram</div>
-
-                <div class="sub">
-                    Follow me on Instagram
-                </div>
+                <div class="sub">Follow me on Instagram</div>
             </div>
-
             <div class="arrow">›</div>
-
         </a>
-
 
         <!-- TELEGRAM -->
-
-        <a
-            class="link telegram"
-            href="https://t.me/gabisaflexing/2"
-            target="_blank"
-            rel="noopener noreferrer">
-
+        <a class="link telegram"
+           href="https://t.me/gabisaflexing/2"
+           target="_blank">
             <div class="icon">✈️</div>
-
             <div class="info">
                 <div class="name">Telegram</div>
-
-                <div class="sub">
-                    Join my Telegram channel
-                </div>
+                <div class="sub">Join my Telegram channel</div>
             </div>
-
             <div class="arrow">›</div>
-
         </a>
-
 
         <!-- SPOTIFY -->
-
-        <a
-            class="link spotify"
-            href="https://open.spotify.com/playlist/3KzUma6ZeY17qOoJVjRVDD"
-            target="_blank"
-            rel="noopener noreferrer">
-
+        <a class="link spotify"
+           href="https://open.spotify.com/playlist/3KzUma6ZeY17qOoJVjRVDD?si=VqNY-Q3xSA6uW2Ul5fRcrg&utm_source=copy-link&pi=Zh42Z8FBRRCwl"
+           target="_blank">
             <div class="icon">🎵</div>
-
             <div class="info">
                 <div class="name">Spotify</div>
-
-                <div class="sub">
-                    Listen to my playlist
-                </div>
+                <div class="sub">Listen to my playlist</div>
             </div>
-
             <div class="arrow">›</div>
-
         </a>
-
 
     </div>
 
-
-    <!-- FOOTER -->
-
     <footer>
-
-        <div class="created">
-            © CREATED BY ZER
-        </div>
-
-        <div class="since">
-            SINCE 2026
-        </div>
-
+        © 2026 created by ZER
     </footer>
-
 
 </div>
 
