@@ -29,6 +29,7 @@ body {
     overflow-x: hidden;
 }
 
+/* BACKGROUND EFFECT */
 body::before {
     content: "";
     position: fixed;
@@ -36,7 +37,12 @@ body::before {
     pointer-events: none;
     opacity: 0.35;
     background:
-        linear-gradient(90deg, transparent 0%, rgba(0,255,255,0.04) 50%, transparent 100%),
+        linear-gradient(
+            90deg,
+            transparent 0%,
+            rgba(0,255,255,0.04) 50%,
+            transparent 100%
+        ),
         repeating-linear-gradient(
             90deg,
             transparent 0px,
@@ -46,27 +52,35 @@ body::before {
         );
 }
 
+/* CONTAINER */
 .container {
     width: 100%;
     max-width: 620px;
     margin: auto;
-    padding: 55px 22px 45px;
+    padding: 50px 20px 40px;
     position: relative;
     z-index: 1;
 }
 
-/* FOTO */
+/* FOTO PROFIL */
 .profile {
-    width: 190px;
-    height: 190px;
-    margin: 0 auto 25px;
+    width: 175px;
+    height: 175px;
+    margin: 0 auto 22px;
     border-radius: 50%;
-    padding: 6px;
-    background: linear-gradient(135deg, #ffffff, #ff003c, #ff0066);
+    padding: 5px;
+
+    background: linear-gradient(
+        135deg,
+        #ffffff,
+        #ff003c,
+        #ff0066
+    );
+
     box-shadow:
-        0 0 15px rgba(255,0,70,0.9),
-        0 0 40px rgba(255,0,70,0.6),
-        0 0 80px rgba(255,0,70,0.3);
+        0 0 15px rgba(255,0,70,0.8),
+        0 0 35px rgba(255,0,70,0.5),
+        0 0 70px rgba(255,0,70,0.25);
 }
 
 .profile img {
@@ -80,179 +94,338 @@ body::before {
 /* JUDUL */
 h1 {
     text-align: center;
-    font-size: 54px;
+    font-size: 52px;
     font-weight: 900;
     letter-spacing: 7px;
+
     text-shadow:
         0 0 10px rgba(255,255,255,0.5),
         0 0 25px rgba(255,0,70,0.7);
 }
 
 .line {
-    width: 75px;
+    width: 72px;
     height: 4px;
-    margin: 15px auto 20px;
+    margin: 14px auto 18px;
     border-radius: 50px;
+
     background: #ff174d;
-    box-shadow: 0 0 15px #ff174d;
+
+    box-shadow:
+        0 0 15px #ff174d,
+        0 0 30px rgba(255,23,77,0.5);
 }
 
 .description {
     text-align: center;
-    font-size: 17px;
+    font-size: 16px;
     line-height: 1.7;
     color: #dddddd;
-    margin-bottom: 35px;
+    margin-bottom: 30px;
 }
 
-/* BUTTON */
+/* LINKS */
 .links {
     display: flex;
     flex-direction: column;
-    gap: 18px;
+    gap: 14px;
 }
 
+/* BUTTON */
 .link {
+    position: relative;
+    overflow: hidden;
+
     text-decoration: none;
     color: white;
-    min-height: 105px;
-    border-radius: 22px;
+
+    min-height: 88px;
+    border-radius: 20px;
+
     display: flex;
     align-items: center;
-    padding: 18px 22px;
-    transition: 0.25s ease;
-    border: 1px solid rgba(255,255,255,0.28);
+
+    padding: 13px 17px;
+
+    border: 1px solid rgba(255,255,255,0.20);
+
     box-shadow:
-        0 8px 25px rgba(0,0,0,0.4),
-        inset 0 1px 0 rgba(255,255,255,0.15);
+        0 8px 25px rgba(0,0,0,0.40),
+        inset 0 1px 0 rgba(255,255,255,0.12);
+
+    transition:
+        transform 0.25s ease,
+        filter 0.25s ease;
 }
 
-.link:active {
-    transform: scale(0.97);
+/* EFEK GARIS BERJALAN */
+.link::before {
+    content: "";
+
+    position: absolute;
+
+    width: 170%;
+    height: 300%;
+
+    top: -100%;
+    left: -35%;
+
+    background:
+        conic-gradient(
+            from 0deg,
+            transparent 0deg,
+            transparent 310deg,
+            rgba(255,255,255,0.15) 325deg,
+            #ffffff 340deg,
+            rgba(255,255,255,0.20) 355deg,
+            transparent 360deg
+        );
+
+    animation: borderMove 4s linear infinite;
 }
 
-.icon {
-    width: 62px;
-    height: 62px;
-    min-width: 62px;
+/* PENUTUP AGAR ISI TOMBOL AMAN */
+.link::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 2px;
+
     border-radius: 18px;
+
+    background: inherit;
+
+    z-index: 0;
+}
+
+/* ISI TOMBOL */
+.link > * {
+    position: relative;
+    z-index: 2;
+}
+
+/* ANIMASI GARIS */
+@keyframes borderMove {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* HOVER */
+.link:hover {
+    transform: translateY(-3px);
+    filter: brightness(1.08);
+}
+
+/* KLIK */
+.link:active {
+    transform: scale(0.98);
+}
+
+/* ICON */
+.icon {
+    width: 54px;
+    height: 54px;
+
+    min-width: 54px;
+
+    border-radius: 17px;
+
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 32px;
-    margin-right: 17px;
+
+    font-size: 27px;
+
+    margin-right: 15px;
+
     background: rgba(255,255,255,0.13);
-    box-shadow: inset 0 0 15px rgba(255,255,255,0.08);
+
+    box-shadow:
+        inset 0 0 15px rgba(255,255,255,0.08);
 }
 
+/* TEXT */
 .info {
     flex: 1;
 }
 
 .name {
-    font-size: 25px;
+    font-size: 22px;
     font-weight: 800;
-    margin-bottom: 7px;
+    margin-bottom: 4px;
 }
 
 .sub {
-    font-size: 15px;
+    font-size: 13px;
     color: rgba(255,255,255,0.88);
 }
 
+/* PANAH */
 .arrow {
-    font-size: 45px;
+    font-size: 40px;
     font-weight: 200;
-    margin-left: 10px;
+    margin-left: 8px;
+    line-height: 1;
 }
 
+/* ========================= */
 /* WARNA TOMBOL */
+/* ========================= */
+
 .saweria {
-    background: linear-gradient(135deg, #ff9200, #ff6500);
+    background: linear-gradient(
+        135deg,
+        #ff9200,
+        #ff6500
+    );
+
     box-shadow:
-        0 0 18px rgba(255,130,0,0.45),
+        0 0 18px rgba(255,130,0,0.35),
         0 8px 25px rgba(0,0,0,0.4);
 }
 
 .sociabuzz {
-    background: linear-gradient(135deg, #ff005d, #ff315e);
+    background: linear-gradient(
+        135deg,
+        #ff005d,
+        #ff315e
+    );
+
     box-shadow:
-        0 0 18px rgba(255,0,93,0.4),
+        0 0 18px rgba(255,0,93,0.35),
         0 8px 25px rgba(0,0,0,0.4);
 }
 
 .discord {
-    background: linear-gradient(135deg, #292b75, #6a36d9);
+    background: linear-gradient(
+        135deg,
+        #292b75,
+        #6a36d9
+    );
+
     box-shadow:
-        0 0 18px rgba(90,60,255,0.45),
+        0 0 18px rgba(90,60,255,0.35),
         0 8px 25px rgba(0,0,0,0.4);
 }
 
 .instagram {
-    background: linear-gradient(135deg, #4a23a5, #e6007e, #ff8500);
+    background: linear-gradient(
+        135deg,
+        #4a23a5,
+        #e6007e,
+        #ff8500
+    );
+
     box-shadow:
-        0 0 18px rgba(255,0,130,0.4),
+        0 0 18px rgba(255,0,130,0.35),
         0 8px 25px rgba(0,0,0,0.4);
 }
 
 .telegram {
-    background: linear-gradient(135deg, #1378b8, #29a9e8);
+    background: linear-gradient(
+        135deg,
+        #1378b8,
+        #29a9e8
+    );
+
     box-shadow:
-        0 0 18px rgba(0,150,255,0.4),
+        0 0 18px rgba(0,150,255,0.35),
         0 8px 25px rgba(0,0,0,0.4);
 }
 
 .spotify {
-    background: linear-gradient(135deg, #062d1b, #087d43);
+    background: linear-gradient(
+        135deg,
+        #062d1b,
+        #087d43
+    );
+
     box-shadow:
-        0 0 18px rgba(0,255,120,0.3),
+        0 0 18px rgba(0,255,120,0.28),
         0 8px 25px rgba(0,0,0,0.4);
 }
 
 /* FOOTER */
 footer {
     text-align: center;
-    margin-top: 45px;
-    padding-bottom: 15px;
-    font-size: 17px;
-    letter-spacing: 4px;
-    color: #cccccc;
+
+    margin-top: 35px;
+    padding-bottom: 10px;
+
+    font-size: 15px;
+    letter-spacing: 3px;
+
+    color: #bdbdbd;
 }
 
+/* ========================= */
 /* MOBILE */
+/* ========================= */
+
 @media (max-width: 480px) {
+
     .container {
-        padding: 45px 16px 35px;
+        padding: 42px 16px 35px;
     }
 
     .profile {
-        width: 165px;
-        height: 165px;
+        width: 155px;
+        height: 155px;
+        margin-bottom: 20px;
     }
 
     h1 {
-        font-size: 45px;
+        font-size: 46px;
+        letter-spacing: 6px;
+    }
+
+    .description {
+        font-size: 15px;
+        margin-bottom: 28px;
+    }
+
+    .links {
+        gap: 13px;
     }
 
     .link {
-        min-height: 95px;
-        padding: 15px 17px;
+        min-height: 82px;
+        padding: 12px 15px;
+        border-radius: 19px;
+    }
+
+    .link::after {
+        border-radius: 17px;
     }
 
     .icon {
-        width: 54px;
-        height: 54px;
-        min-width: 54px;
-        font-size: 27px;
-        margin-right: 14px;
+        width: 50px;
+        height: 50px;
+        min-width: 50px;
+
+        font-size: 25px;
+
+        margin-right: 13px;
+
+        border-radius: 16px;
     }
 
     .name {
-        font-size: 21px;
+        font-size: 20px;
     }
 
     .sub {
-        font-size: 13px;
+        font-size: 12px;
+    }
+
+    .arrow {
+        font-size: 36px;
     }
 }
 </style>
@@ -283,10 +456,12 @@ footer {
            href="https://saweria.co/ZERVDRA"
            target="_blank">
             <div class="icon">☕</div>
+
             <div class="info">
                 <div class="name">Saweria</div>
                 <div class="sub">Support me via Saweria</div>
             </div>
+
             <div class="arrow">›</div>
         </a>
 
@@ -295,10 +470,12 @@ footer {
            href="https://sociabuzz.com/zervdra/tribe"
            target="_blank">
             <div class="icon">💖</div>
+
             <div class="info">
                 <div class="name">Sociabuzz</div>
                 <div class="sub">Support me via Sociabuzz</div>
             </div>
+
             <div class="arrow">›</div>
         </a>
 
@@ -307,10 +484,12 @@ footer {
            href="https://discord.gg/cCE7X5DbN"
            target="_blank">
             <div class="icon">🎮</div>
+
             <div class="info">
                 <div class="name">Discord</div>
                 <div class="sub">Join my Discord server</div>
             </div>
+
             <div class="arrow">›</div>
         </a>
 
@@ -319,10 +498,12 @@ footer {
            href="https://www.instagram.com/zervdra_14?igsh=MTNsa2Y5aDhveGw2Zg%3D%3D&utm_source=qr"
            target="_blank">
             <div class="icon">📸</div>
+
             <div class="info">
                 <div class="name">Instagram</div>
                 <div class="sub">Follow me on Instagram</div>
             </div>
+
             <div class="arrow">›</div>
         </a>
 
@@ -331,10 +512,12 @@ footer {
            href="https://t.me/gabisaflexing/2"
            target="_blank">
             <div class="icon">✈️</div>
+
             <div class="info">
                 <div class="name">Telegram</div>
                 <div class="sub">Join my Telegram channel</div>
             </div>
+
             <div class="arrow">›</div>
         </a>
 
@@ -343,10 +526,12 @@ footer {
            href="https://open.spotify.com/playlist/3KzUma6ZeY17qOoJVjRVDD?si=VqNY-Q3xSA6uW2Ul5fRcrg&utm_source=copy-link&pi=Zh42Z8FBRRCwl"
            target="_blank">
             <div class="icon">🎵</div>
+
             <div class="info">
                 <div class="name">Spotify</div>
                 <div class="sub">Listen to my playlist</div>
             </div>
+
             <div class="arrow">›</div>
         </a>
 
