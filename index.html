@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0">
 
 <title>ZER | Official Links</title>
 
 <style>
 
-/* ============================= */
-/* RESET */
-/* ============================= */
+/* =========================
+   RESET
+========================= */
 
 * {
     margin: 0;
@@ -23,12 +25,23 @@ html {
     scroll-behavior: smooth;
 }
 
+
+/* =========================
+   BODY
+========================= */
+
 body {
     min-height: 100vh;
-    font-family: Arial, Helvetica, sans-serif;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
     color: white;
 
     background:
+
         radial-gradient(
             circle at 50% 0%,
             rgba(255, 0, 70, 0.18),
@@ -58,13 +71,15 @@ body {
 }
 
 
-/* ============================= */
-/* BACKGROUND GRID */
-/* ============================= */
+/* =========================
+   BACKGROUND EFFECT
+========================= */
 
 body::before {
     content: "";
+
     position: fixed;
+
     inset: 0;
 
     pointer-events: none;
@@ -72,6 +87,7 @@ body::before {
     opacity: 0.35;
 
     background:
+
         linear-gradient(
             90deg,
             transparent 0%,
@@ -89,42 +105,47 @@ body::before {
 }
 
 
-/* ============================= */
-/* CONTAINER */
-/* ============================= */
+/* =========================
+   CONTAINER
+========================= */
 
 .container {
     width: 100%;
+
     max-width: 620px;
 
     margin: auto;
 
     padding:
-        20px
+        55px
         22px
         45px;
 
     position: relative;
+
     z-index: 1;
 }
 
 
-/* ============================= */
-/* FOTO PROFIL */
-/* ============================= */
+/* =========================
+   FOTO PROFIL
+========================= */
 
 .profile {
     width: 190px;
+
     height: 190px;
 
     margin:
-        0 auto 25px;
+        0 auto
+        25px;
 
     border-radius: 50%;
 
     padding: 6px;
 
     background:
+
         linear-gradient(
             135deg,
             #ffffff,
@@ -133,13 +154,21 @@ body::before {
         );
 
     box-shadow:
-        0 0 15px rgba(255,0,70,0.9),
-        0 0 40px rgba(255,0,70,0.6),
-        0 0 80px rgba(255,0,70,0.3);
+
+        0 0 15px
+        rgba(255,0,70,0.9),
+
+        0 0 40px
+        rgba(255,0,70,0.6),
+
+        0 0 80px
+        rgba(255,0,70,0.3);
 }
+
 
 .profile img {
     width: 100%;
+
     height: 100%;
 
     object-fit: cover;
@@ -150,9 +179,9 @@ body::before {
 }
 
 
-/* ============================= */
-/* JUDUL */
-/* ============================= */
+/* =========================
+   JUDUL
+========================= */
 
 h1 {
     text-align: center;
@@ -164,34 +193,41 @@ h1 {
     letter-spacing: 7px;
 
     text-shadow:
-        0 0 10px rgba(255,255,255,0.5),
-        0 0 25px rgba(255,0,70,0.7);
+
+        0 0 10px
+        rgba(255,255,255,0.5),
+
+        0 0 25px
+        rgba(255,0,70,0.7);
 }
 
 
-/* ============================= */
-/* GARIS BAWAH JUDUL */
-/* ============================= */
+/* =========================
+   GARIS BAWAH JUDUL
+========================= */
 
 .line {
     width: 75px;
+
     height: 4px;
 
     margin:
-        15px auto 20px;
+        15px auto
+        20px;
 
     border-radius: 50px;
 
     background: #ff174d;
 
     box-shadow:
-        0 0 15px #ff174d;
+        0 0 15px
+        #ff174d;
 }
 
 
-/* ============================= */
-/* DESCRIPTION */
-/* ============================= */
+/* =========================
+   DESKRIPSI
+========================= */
 
 .description {
     text-align: center;
@@ -206,29 +242,29 @@ h1 {
 }
 
 
-/* ============================= */
-/* LINKS */
-/* ============================= */
+/* =========================
+   LINKS
+========================= */
 
 .links {
     display: flex;
 
     flex-direction: column;
 
-    gap: 18px;
+    gap: 22px;
 }
 
 
-/* ============================= */
-/* BUTTON UTAMA */
-/* ============================= */
+/* =========================
+   TOMBOL UTAMA
+========================= */
 
 .link {
     text-decoration: none;
 
     color: white;
 
-    min-height: 95px;
+    min-height: 100px;
 
     border-radius: 22px;
 
@@ -237,92 +273,115 @@ h1 {
     align-items: center;
 
     padding:
-        15px
+        16px
         20px;
 
     position: relative;
 
-    border:
-        1px solid
-        rgba(255,255,255,0.28);
+    /* TIDAK ADA BORDER */
+    border: none;
 
-    box-shadow:
-        0 8px 25px rgba(0,0,0,0.4),
-        inset 0 1px 0 rgba(255,255,255,0.15);
+    /* TIDAK ADA GARIS PUTIH */
+    outline: none;
 
-    /*
-        DENYUT PERLAHAN
-    */
+    -webkit-tap-highlight-color: transparent;
+
+    transform: scale(1);
+
+    transform-origin: center;
+
     animation:
         heartbeat
-        3.5s
+        2.8s
         ease-in-out
         infinite;
 
-    /*
-        Supaya perubahan ukuran
-        terasa sangat halus
-    */
-    will-change: transform;
+    will-change:
+        transform,
+        box-shadow;
+
+    transition:
+        transform 0.15s ease,
+        filter 0.15s ease;
 }
 
 
-/* ============================= */
-/* ANIMASI DENYUT */
-/* ============================= */
+/* =========================
+   EFEK DENYUT JANTUNG
+========================= */
 
 @keyframes heartbeat {
 
     0% {
         transform: scale(1);
+        filter: brightness(1);
     }
 
-    25% {
-        transform: scale(1.012);
+    15% {
+        transform: scale(1.035);
+        filter: brightness(1.08);
     }
 
-    50% {
-        transform: scale(1.025);
+    30% {
+        transform: scale(1);
+        filter: brightness(1);
     }
 
-    75% {
-        transform: scale(1.012);
+    45% {
+        transform: scale(1.02);
+        filter: brightness(1.04);
+    }
+
+    60% {
+        transform: scale(1);
+        filter: brightness(1);
     }
 
     100% {
         transform: scale(1);
+        filter: brightness(1);
     }
 
 }
 
 
-/* ============================= */
-/* SAAT DIKLIK / TAP */
-/* ============================= */
+/* =========================
+   SAAT DITEKAN
+   KEMBALI UKURAN NORMAL
+========================= */
 
 .link:active {
-
-    /*
-        Hentikan denyut ketika disentuh
-        dan langsung kembali normal
-    */
-
     animation: none;
 
     transform: scale(1);
 
+    filter: brightness(1);
 }
 
 
-/* ============================= */
-/* ICON */
-/* ============================= */
+/* =========================
+   HILANGKAN SEMUA
+   GARIS / PSEUDO ELEMENT
+========================= */
+
+.link::before,
+.link::after {
+    content: none !important;
+
+    display: none !important;
+}
+
+
+/* =========================
+   ICON
+========================= */
 
 .icon {
-    width: 62px;
-    height: 62px;
+    width: 58px;
 
-    min-width: 62px;
+    height: 58px;
+
+    min-width: 58px;
 
     border-radius: 18px;
 
@@ -332,73 +391,78 @@ h1 {
 
     justify-content: center;
 
-    font-size: 32px;
+    font-size: 29px;
 
-    margin-right: 17px;
+    margin-right: 16px;
 
     background:
         rgba(255,255,255,0.13);
 
     box-shadow:
-        inset 0 0 15px
+
+        inset
+        0 0 15px
         rgba(255,255,255,0.08);
 }
 
 
-/* ============================= */
-/* INFO */
-/* ============================= */
+/* =========================
+   INFO
+========================= */
 
 .info {
     flex: 1;
 }
 
 
-/* ============================= */
-/* NAMA */
-/* ============================= */
+/* =========================
+   NAMA
+========================= */
 
 .name {
-    font-size: 25px;
+    font-size: 23px;
 
     font-weight: 800;
 
-    margin-bottom: 7px;
+    margin-bottom: 6px;
 }
 
 
-/* ============================= */
-/* SUBTEXT */
-/* ============================= */
+/* =========================
+   SUBTEXT
+========================= */
 
 .sub {
-    font-size: 15px;
+    font-size: 14px;
 
     color:
         rgba(255,255,255,0.88);
 }
 
 
-/* ============================= */
-/* ARROW */
-/* ============================= */
+/* =========================
+   PANAH
+========================= */
 
 .arrow {
-    font-size: 45px;
+    font-size: 42px;
 
     font-weight: 200;
 
     margin-left: 10px;
+
+    line-height: 1;
 }
 
 
-/* ============================= */
-/* WARNA SAWERIA */
-/* ============================= */
+/* =========================
+   SAWERIA
+========================= */
 
 .saweria {
 
     background:
+
         linear-gradient(
             135deg,
             #ff9200,
@@ -406,21 +470,23 @@ h1 {
         );
 
     box-shadow:
-        0 0 18px
-        rgba(255,130,0,0.45),
 
-        0 8px 25px
-        rgba(0,0,0,0.4);
+        0 0 18px
+        rgba(255,130,0,0.40),
+
+        0 10px 28px
+        rgba(0,0,0,0.38);
 }
 
 
-/* ============================= */
-/* WARNA SOCIABUZZ */
-/* ============================= */
+/* =========================
+   SOCIABUZZ
+========================= */
 
 .sociabuzz {
 
     background:
+
         linear-gradient(
             135deg,
             #ff005d,
@@ -428,21 +494,23 @@ h1 {
         );
 
     box-shadow:
-        0 0 18px
-        rgba(255,0,93,0.4),
 
-        0 8px 25px
-        rgba(0,0,0,0.4);
+        0 0 18px
+        rgba(255,0,93,0.38),
+
+        0 10px 28px
+        rgba(0,0,0,0.38);
 }
 
 
-/* ============================= */
-/* WARNA DISCORD */
-/* ============================= */
+/* =========================
+   DISCORD
+========================= */
 
 .discord {
 
     background:
+
         linear-gradient(
             135deg,
             #292b75,
@@ -450,21 +518,23 @@ h1 {
         );
 
     box-shadow:
-        0 0 18px
-        rgba(90,60,255,0.45),
 
-        0 8px 25px
-        rgba(0,0,0,0.4);
+        0 0 18px
+        rgba(90,60,255,0.40),
+
+        0 10px 28px
+        rgba(0,0,0,0.38);
 }
 
 
-/* ============================= */
-/* WARNA INSTAGRAM */
-/* ============================= */
+/* =========================
+   INSTAGRAM
+========================= */
 
 .instagram {
 
     background:
+
         linear-gradient(
             135deg,
             #4a23a5,
@@ -473,21 +543,23 @@ h1 {
         );
 
     box-shadow:
-        0 0 18px
-        rgba(255,0,130,0.4),
 
-        0 8px 25px
-        rgba(0,0,0,0.4);
+        0 0 18px
+        rgba(255,0,130,0.38),
+
+        0 10px 28px
+        rgba(0,0,0,0.38);
 }
 
 
-/* ============================= */
-/* WARNA TELEGRAM */
-/* ============================= */
+/* =========================
+   TELEGRAM
+========================= */
 
 .telegram {
 
     background:
+
         linear-gradient(
             135deg,
             #1378b8,
@@ -495,21 +567,23 @@ h1 {
         );
 
     box-shadow:
-        0 0 18px
-        rgba(0,150,255,0.4),
 
-        0 8px 25px
-        rgba(0,0,0,0.4);
+        0 0 18px
+        rgba(0,150,255,0.38),
+
+        0 10px 28px
+        rgba(0,0,0,0.38);
 }
 
 
-/* ============================= */
-/* WARNA SPOTIFY */
-/* ============================= */
+/* =========================
+   SPOTIFY
+========================= */
 
 .spotify {
 
     background:
+
         linear-gradient(
             135deg,
             #062d1b,
@@ -517,68 +591,61 @@ h1 {
         );
 
     box-shadow:
-        0 0 18px
-        rgba(0,255,120,0.3),
 
-        0 8px 25px
-        rgba(0,0,0,0.4);
+        0 0 18px
+        rgba(0,255,120,0.28),
+
+        0 10px 28px
+        rgba(0,0,0,0.38);
 }
 
 
-/* ============================= */
-/* FOOTER */
-/* ============================= */
+/* =========================
+   FOOTER
+========================= */
 
 footer {
-
     text-align: center;
 
-    margin-top: 48px;
+    margin-top: 55px;
 
-    padding-bottom: 15px;
+    padding-bottom: 20px;
+
+    color:
+        rgba(255,255,255,0.72);
 }
 
 
-/* CREATED BY ZER */
-
 .created {
-
     font-size: 18px;
 
     font-weight: 700;
 
-    letter-spacing: 6px;
+    letter-spacing: 7px;
 
-    color:
-        rgba(255,255,255,0.78);
-
-    margin-bottom: 14px;
+    margin-bottom: 12px;
 }
 
 
-/* SINCE 2026 */
-
 .since {
-
     font-size: 13px;
 
     font-weight: 600;
 
-    letter-spacing: 7px;
+    letter-spacing: 9px;
 
     color:
-        rgba(255,255,255,0.40);
+        rgba(255,255,255,0.45);
 }
 
 
-/* ============================= */
-/* MOBILE */
-/* ============================= */
+/* =========================
+   MOBILE
+========================= */
 
 @media (max-width: 480px) {
 
     .container {
-
         padding:
             45px
             16px
@@ -587,7 +654,6 @@ footer {
 
 
     .profile {
-
         width: 165px;
 
         height: 165px;
@@ -595,39 +661,25 @@ footer {
 
 
     h1 {
-
         font-size: 45px;
     }
 
 
-    .description {
-
-        font-size: 16px;
-
-        margin-bottom: 30px;
-    }
-
-
     .links {
-
-        gap: 18px;
+        gap: 20px;
     }
 
 
     .link {
-
         min-height: 95px;
 
         padding:
             15px
             17px;
-
-        border-radius: 22px;
     }
 
 
     .icon {
-
         width: 54px;
 
         height: 54px;
@@ -641,91 +693,64 @@ footer {
 
 
     .name {
-
         font-size: 21px;
     }
 
 
     .sub {
-
         font-size: 13px;
     }
 
 
-    .arrow {
-
-        font-size: 40px;
-    }
-
-
     .created {
-
-        font-size: 15px;
+        font-size: 16px;
 
         letter-spacing: 5px;
     }
 
 
     .since {
-
         font-size: 11px;
 
-        letter-spacing: 6px;
+        letter-spacing: 7px;
     }
 
 }
 
 </style>
-
 </head>
 
 
 <body>
 
-
 <div class="container">
 
 
-    <!-- ============================= -->
     <!-- FOTO PROFIL -->
-    <!-- ============================= -->
 
     <div class="profile">
-
         <img
             src="IMG_0205.jpeg"
-            alt="ZER"
-        >
-
+            alt="ZER">
     </div>
 
 
-    <!-- ============================= -->
     <!-- JUDUL -->
-    <!-- ============================= -->
 
     <h1>ZER</h1>
-
 
     <div class="line"></div>
 
 
-    <!-- ============================= -->
     <!-- DESKRIPSI -->
-    <!-- ============================= -->
 
     <div class="description">
-
         Welcome to my official links.<br>
-
         Support and connect with me below.
-
     </div>
 
 
-    <!-- ============================= -->
-    <!-- SEMUA LINK -->
-    <!-- ============================= -->
+    <!-- LINKS -->
 
     <div class="links">
 
@@ -736,32 +761,21 @@ footer {
             class="link saweria"
             href="https://saweria.co/ZERVDRA"
             target="_blank"
-        >
+            rel="noopener noreferrer">
 
-            <div class="icon">
-                ☕
-            </div>
-
+            <div class="icon">☕</div>
 
             <div class="info">
-
-                <div class="name">
-                    Saweria
-                </div>
+                <div class="name">Saweria</div>
 
                 <div class="sub">
                     Support me via Saweria
                 </div>
-
             </div>
 
-
-            <div class="arrow">
-                ›
-            </div>
+            <div class="arrow">›</div>
 
         </a>
-
 
 
         <!-- SOCIABUZZ -->
@@ -770,32 +784,21 @@ footer {
             class="link sociabuzz"
             href="https://sociabuzz.com/zervdra/tribe"
             target="_blank"
-        >
+            rel="noopener noreferrer">
 
-            <div class="icon">
-                💖
-            </div>
-
+            <div class="icon">💖</div>
 
             <div class="info">
-
-                <div class="name">
-                    Sociabuzz
-                </div>
+                <div class="name">Sociabuzz</div>
 
                 <div class="sub">
                     Support me via Sociabuzz
                 </div>
-
             </div>
 
-
-            <div class="arrow">
-                ›
-            </div>
+            <div class="arrow">›</div>
 
         </a>
-
 
 
         <!-- DISCORD -->
@@ -804,66 +807,44 @@ footer {
             class="link discord"
             href="https://discord.gg/cCE7X5DbN"
             target="_blank"
-        >
+            rel="noopener noreferrer">
 
-            <div class="icon">
-                🎮
-            </div>
-
+            <div class="icon">🎮</div>
 
             <div class="info">
-
-                <div class="name">
-                    Discord
-                </div>
+                <div class="name">Discord</div>
 
                 <div class="sub">
                     Join my Discord server
                 </div>
-
             </div>
 
-
-            <div class="arrow">
-                ›
-            </div>
+            <div class="arrow">›</div>
 
         </a>
-
 
 
         <!-- INSTAGRAM -->
 
         <a
             class="link instagram"
-            href="https://www.instagram.com/zervdra_14?igsh=MTNsa2Y5aDhveGw2Zg%3D%3D&utm_source=qr"
+            href="https://www.instagram.com/zervdra_14"
             target="_blank"
-        >
+            rel="noopener noreferrer">
 
-            <div class="icon">
-                📸
-            </div>
-
+            <div class="icon">📸</div>
 
             <div class="info">
-
-                <div class="name">
-                    Instagram
-                </div>
+                <div class="name">Instagram</div>
 
                 <div class="sub">
                     Follow me on Instagram
                 </div>
-
             </div>
 
-
-            <div class="arrow">
-                ›
-            </div>
+            <div class="arrow">›</div>
 
         </a>
-
 
 
         <!-- TELEGRAM -->
@@ -872,63 +853,42 @@ footer {
             class="link telegram"
             href="https://t.me/gabisaflexing/2"
             target="_blank"
-        >
+            rel="noopener noreferrer">
 
-            <div class="icon">
-                ✈️
-            </div>
-
+            <div class="icon">✈️</div>
 
             <div class="info">
-
-                <div class="name">
-                    Telegram
-                </div>
+                <div class="name">Telegram</div>
 
                 <div class="sub">
                     Join my Telegram channel
                 </div>
-
             </div>
 
-
-            <div class="arrow">
-                ›
-            </div>
+            <div class="arrow">›</div>
 
         </a>
-
 
 
         <!-- SPOTIFY -->
 
         <a
             class="link spotify"
-            href="https://open.spotify.com/playlist/3KzUma6ZeY17qOoJVjRVDD?si=VqNY-Q3xSA6uW2Ul5fRcrg&utm_source=copy-link&pi=Zh42Z8FBRRCwl"
+            href="https://open.spotify.com/playlist/3KzUma6ZeY17qOoJVjRVDD"
             target="_blank"
-        >
+            rel="noopener noreferrer">
 
-            <div class="icon">
-                🎵
-            </div>
-
+            <div class="icon">🎵</div>
 
             <div class="info">
-
-                <div class="name">
-                    Spotify
-                </div>
+                <div class="name">Spotify</div>
 
                 <div class="sub">
                     Listen to my playlist
                 </div>
-
             </div>
 
-
-            <div class="arrow">
-                ›
-            </div>
+            <div class="arrow">›</div>
 
         </a>
 
@@ -936,9 +896,7 @@ footer {
     </div>
 
 
-    <!-- ============================= -->
     <!-- FOOTER -->
-    <!-- ============================= -->
 
     <footer>
 
@@ -954,7 +912,6 @@ footer {
 
 
 </div>
-
 
 </body>
 </html>
